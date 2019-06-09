@@ -1,13 +1,9 @@
 from django.contrib import admin
 from .models import Picture
-from sorl.thumbnail.admin import AdminImageMixin
 
 
+class PictureAdmin(admin.ModelAdmin):
+    list_display = ('title', 'created_date', 'image_tag',)
 
 
-# admin.site.register(Picture)
-
-@admin.register(Picture)
-class PictureAdmin(AdminImageMixin ,admin.ModelAdmin):
-    list_display = ('title', 'created_date', 'picture')
-#     ordering = ('-created_date')
+admin.site.register(Picture, PictureAdmin)

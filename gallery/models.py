@@ -1,18 +1,26 @@
 from django.db import models
 from django.utils import timezone
-from sorl.thumbnail import ImageField
+from django.utils.safestring import mark_safe
 
 class Picture(models.Model):
-    picture = models.ImageField(upload_to='static')
+    picture = models.ImageField(upload_to='media')
     title = models.CharField(max_length=60)
     created_date = models.DateTimeField(default=timezone.now)
+
+    def get_name(self):
+        directory = self.picture.name.split('/')
+        return directory[-1]
+
+    def image_tag(self):
+        if self.picture:
+            return mark_safe('<img width="200px" src="%s"/>' % self.picture.url)
+        else:
+            return 'No Image Found'
+    image_tag.short_description = 'Image'
+    image_tag.allow_tags = True
 
     class Meta:
         ordering = ('-created_date',)
 
-
     def __str__(self):
         return self.title
-
-
-

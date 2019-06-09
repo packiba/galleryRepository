@@ -7,11 +7,12 @@
 </head>
 <body>
 <h1>My gallery</h1>
-{% for picture in object_list %}
+
+{% for image in images %}
     <h2>
-        "{{ picture }}"
+        "{{ image }}"
+        <img width="200px" src="media/{{ image.get_name }}">
     </h2>
-    <img src="{{ picture.picture.url }}">
 {% endfor %}
 
 </body>
