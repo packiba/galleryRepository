@@ -1,0 +1,25 @@
+html {
+  font-size: 30px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
+  font-family: 'Montserrat';
+  text-align: center;
+ /*background-color: #bcbcbc;*/
+  background: url('/static/bg-light-4853.png');
+}
+
+h1 {
+  font-size: 60px;
+}
+
+img {
+  border: 5px #585a5e solid;
+  border-radius: 50px;
+  margin: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+.imgCenter {
+    margin: 60px;
+}

@@ -1,18 +1,21 @@
 {% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
 </head>
 <body>
-<h1>My gallery</h1>
+<h1>МОИ РАБОТЫ</h1>
 
 {% for image in images %}
-    <h2>
-        "{{ image }}"
-        <img width="200px" src="media/{{ image.get_name }}">
-    </h2>
+<div class="imgCenter">
+    <img width="600px" src="media/{{ image.get_name }}">
+    <p>{{ image.title }}</p>
+</div>
 {% endfor %}
 
 </body>
