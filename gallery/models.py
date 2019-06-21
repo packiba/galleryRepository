@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.utils.safestring import mark_safe
+from django.urls import reverse
 
 class Picture(models.Model):
     picture = models.ImageField(upload_to='media')
@@ -18,6 +19,9 @@ class Picture(models.Model):
             return 'No Image Found'
     image_tag.short_description = 'Image'
     image_tag.allow_tags = True
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ('-created_date',)

@@ -1,11 +1,12 @@
-# from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 from .models import Picture
 
 
-# class Mylist(ListView):
-#     template_name = 'gallery/list.html'
+class PictureListView(ListView):
+    model = Picture
+    template_name = 'gallery/list.html'
 
-def piclist(request):
-    images = Picture.objects.all()
-    return render(request, 'gallery/list.html', {'images': images})
+class PictureDetailView(DetailView):
+    model = Picture
+    template_name = 'gallery/detail.html'

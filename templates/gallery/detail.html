@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Мои работы</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+
+<div class="imgDetail">
+    <img width="800px" src="media/{{ object.get_name }}">
+    <p>{{ object.title }}</p>
+</div>
+
+</body>
+</html>

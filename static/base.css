@@ -10,16 +10,33 @@ h1 {
   font-size: 60px;
 }
 
-img {
-  border: 5px #585a5e solid;
-  border-radius: 50px;
-  margin: 0px;
-}
-
 p {
     margin: 0px;
 }
 
-.imgCenter {
-    margin: 60px;
+.imgList img {
+
+    box-shadow: 8px 8px 35px rgba(0,0,0,.3);
+    border-radius: 300px;
+    margin: 20px;
+}
+
+.imgList {
+    margin-bottom: 90px;
+}
+
+.imgList p {
+    margin-bottom: 0px;
+}
+
+
+.imgDetail img {
+    box-shadow: 5px 5px 30px rgba(0,0,0,.5);
+    border-radius: 10px;
+}
+
+.imgList img:hover {
+border-radius: 10px;
+transition: 1s;
+transform: scale(1.1);
 }
